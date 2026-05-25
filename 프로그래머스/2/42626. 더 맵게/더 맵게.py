@@ -15,7 +15,7 @@ def solution(scoville, K):
         if len(scoville) < 2:
             return -1
 
-        # 가장 작은 두 음식을 꺼내 새로운 음식 생성 후 다시 넣기
+        # 섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2) 적용
         heapq.heappush(
             scoville,
             heapq.heappop(scoville) + heapq.heappop(scoville) * 2
